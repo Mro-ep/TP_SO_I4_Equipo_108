@@ -1,0 +1,16 @@
+Respuestas:
+ALFA:
+a) El fondo en TESTING es azul.
+b) El fondo en DESARROLLO es amarillo.
+c) En el master quedaron en fondo ambos colores.
+d) En el master quedó el favicon de ALFA.
+e) GAMMA tuvo un inconveniente específicamente:
+$ git push origin TESTING
+To https://github.com/Mro-ep/TP_SO_I4_Equipo_108.git
+ ! [rejected]        TESTING -> TESTING (fetch first)
+error: failed to push some refs to 'https://github.com/Mro-ep/TP_SO_I4_Equipo_10
+8.git'
+f) Además del problema mencionado de GAMMA, ALFA tuvo un problema previo a la consigna de cambios al unísono, donde no podía hacer push por que se estaba llevando a cabo un MERGE.
+g) 1. Solución 1: GAMMA debe hacer un git pull origin TESTING. Git detectará un conflicto de merge en index.html debido a que ambos modificaron la misma línea. GAMMA deberá abrir el archivo, decidir de qué forma conviven ambos párrafos, guardar, hacer un nuevo commit y ejecutar el push. Consecuencia: Se preserva el trabajo de ambos de forma ordenada.
+h) El uso de git push -f  obliga al servidor a aceptar los cambios locales borrando el historial que difiera. Si GAMMA lo usa, sobrescribirá y borrará por completo el commit y el párrafo que subió ALFA previamente. 
+I) Tras resolver el conflicto en TESTING (mencionado en la respuesta G), se debe ir a la rama DESARROLLO (git checkout DESARROLLO) y ejecutar un merge limpio desde testing: git merge TESTING, para finalmente subirlo con git push origin DESARROLLO.
